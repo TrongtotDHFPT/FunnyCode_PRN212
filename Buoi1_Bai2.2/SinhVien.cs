@@ -21,7 +21,7 @@ namespace Buoi1_Bai2._2
             DiemTB = diemTB;
         }
 
-        
+        //update
     }
 
 }

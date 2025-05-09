@@ -17,6 +17,6 @@ namespace Buoi1_Bai2
             ChieuRong = chieuRong;
         }
 
-        
+        //update
     }
 }
