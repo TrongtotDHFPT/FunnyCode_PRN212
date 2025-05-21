@@ -1,15 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
     <TargetFramework>net8.0</TargetFramework>
-    <RootNamespace>Buoi1_Bai2._2</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Buoi1_Bai2\Buoi1_Bai2.csproj" />
+    <ProjectReference Include="..\ClassLibrary_Repositories\ClassLibrary_Repositories.csproj" />
   </ItemGroup>
 
 </Project>

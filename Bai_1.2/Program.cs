@@ -10,14 +10,16 @@
             int a, b, c;
             PhanTichSo(number, out a, out b, out c);
             Console.WriteLine("So : "+number);
-            Console.WriteLine("tram : " + a);
-            Console.WriteLine("chuc : " + b);
-            Console.WriteLine("donVi : " + c);
+            //Console.WriteLine("tram : " + a);
+            //Console.WriteLine("chuc : " + b);
+            //Console.WriteLine("donVi : " + c);
+            Console.WriteLine($"{a} - {b} - {c}");
+
         }
         public static void PhanTichSo(int so, out int tram, out int chuc, out int donVi)
         {
             donVi = so % 10;
-            chuc = (so / 10) % 10;
+            chuc = (so % 100) / 10;
             tram = so / 100;
         }
     }

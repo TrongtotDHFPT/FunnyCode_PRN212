@@ -28,6 +28,9 @@
             {
                 Console.WriteLine(XepLoai(sv));
             }
+            //Vào dependencies => chọn project reference 
+            HinhChuNhat hinhChuNhat = new HinhChuNhat(5, 10);// class phải là public , default chỉ đc cùng project
+            Console.WriteLine(hinhChuNhat.ToString());
         }
         public static void NhapThongTin(Sinhvien sv)
         {
@@ -78,6 +81,8 @@
             }
 
             //update
+
+           
         }
 
     }

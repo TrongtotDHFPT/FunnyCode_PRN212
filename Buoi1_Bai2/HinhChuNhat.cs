@@ -17,6 +17,13 @@ namespace Buoi1_Bai2
             ChieuRong = chieuRong;
         }
 
+        public override string? ToString()
+        {
+            return "Test";
+            
+        }
+
+
         //update
     }
 }

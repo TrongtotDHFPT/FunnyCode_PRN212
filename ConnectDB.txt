@@ -1,0 +1,39 @@
+1.Import Library:
+<ItemGroup>
+  <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.8" />
+  <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.8">
+    <PrivateAssets>all</PrivateAssets>
+    <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+  </PackageReference>
+  <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.8" />
+  <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.8">
+    <PrivateAssets>all</PrivateAssets>
+    <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+  </PackageReference>
+  <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
+  <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
+</ItemGroup>
+
+2. Tạo file appsettings.json: 
+{
+  "ConnectionStrings": {
+    "DBDefault": "Data Source=<DB_Server_Name>;Initial Catalog=<Name_DB>;User ID=sa;Password=123;Trusted_Connection=True;Trust Server Certificate=True"
+  }
+}
+
+3. Chạy lệnh Database First: 
+Bật Terminal -> Chạy : 
+dotnet ef dbcontext scaffold "Data Source=KHOABUG-PC\SQLEXPRESS;Database=PE_PRN_24SumB1;User Id=sa;Password=123;TrustServerCertificate=true;Trusted_Connection=SSPI;Encrypt=false;" Microsoft.EntityFrameworkCore.SqlServer -o Models
+--
+4. Configuration in DbContext:
+
+protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+{
+    var configuration = new ConfigurationBuilder()
+        .SetBasePath(Directory.GetCurrentDirectory())
+        .AddJsonFile("appsettings.json")
+        .Build();
+        
+    var connectionString = configuration.GetConnectionString("DBDefault");
+    optionsBuilder.UseSqlServer(connectionString);
+}

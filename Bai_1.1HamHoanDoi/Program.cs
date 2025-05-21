@@ -1,4 +1,6 @@
-﻿namespace Bai_1._1HamHoanDoi
+﻿using System.Security.Cryptography.X509Certificates;
+
+namespace Bai_1._1HamHoanDoi
 {
     internal class Program
     {
@@ -9,13 +11,18 @@
         */
         static void Main(string[] args)
         {
-            int number_a = 100;
-            int number_b = 200;
-            Console.WriteLine("ban đầu : a = " + number_a);
-            Console.WriteLine("ban đầu : b = " + number_b);
-            HoanDoi(ref number_a, ref number_b);
-            Console.WriteLine("a = "+number_a);
-            Console.WriteLine("b = " + number_b);
+            //int number_a = 100;
+            //int number_b = 200;
+            //Console.WriteLine("ban đầu : a = " + number_a);
+            //Console.WriteLine("ban đầu : b = " + number_b);
+            //HoanDoi(ref number_a, ref number_b);
+            //Console.WriteLine("a = "+number_a);
+            //Console.WriteLine("b = " + number_b);
+
+            int tu = 5;
+
+            int mau = 0;
+            Console.WriteLine("");
         }
         
         public static void HoanDoi(ref int a, ref int b)
